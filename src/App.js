@@ -4,15 +4,45 @@ import { useState } from "react";
 
 const bookDB = {
   Music: [
-    { name: "Lose Yourself", Directer: "by enimen", rating: "5/5" },
-    { name: "Naruto", Directer: "by kishimoto", rating: "4/5" },
-    { name: "Venom", Directer: "by eminem", rating: "4/5" }
+    {
+      name: "Lose Yourself",
+      Directer: "by enimen",
+      ratestar: "⭐⭐⭐⭐⭐",
+      rating: "5/5"
+    },
+    {
+      name: "Naruto",
+      Directer: "by kishimoto",
+      ratestar: "⭐⭐⭐⭐",
+      rating: "4/5"
+    },
+    {
+      name: "Venom",
+      Directer: "by eminem",
+      ratestar: "⭐⭐⭐⭐",
+      rating: "4/5"
+    }
   ],
 
   Games: [
-    { name: "Valorant", Directer: "Riot", rating: "5/5" },
-    { name: "Apex Legends", Directer: "EA Sports", rating: "4/5" },
-    { name: "Among US", Directer: "Games", rating: "4/5" }
+    {
+      name: "Valorant",
+      Directer: "Riot",
+      ratestar: "⭐⭐⭐⭐⭐",
+      rating: "5/5"
+    },
+    {
+      name: "Apex Legends",
+      Directer: "EA Sports",
+      ratestar: "⭐⭐⭐⭐",
+      rating: "4/5"
+    },
+    {
+      name: "Among US",
+      Directer: "InnerSloth LLC",
+      ratestar: "⭐⭐⭐⭐",
+      rating: "4/5"
+    }
   ]
 };
 
@@ -49,7 +79,7 @@ export default function App() {
           </button>
         ))}
       </div>
-      <hr />
+     <p  style={{background : "black"}}>< hr  /> </p>
       <div style={{ textAlign: "left" }}>
         <ul style={{ paddingInlineStart: "0" }}>
           {bookDB[selectedGenre].map((book) => (
@@ -76,6 +106,7 @@ export default function App() {
                 {book.name}{" "}
               </div>
               <div
+                key={book.Directer}
                 style={{
                   fontSize: "18px",
                   padding: "0.5 erm 1erm",
@@ -86,6 +117,18 @@ export default function App() {
                 {book.Directer}{" "}
               </div>
               <div
+                key={book.ratestar}
+                style={{
+                  fontSize: "18px",
+                  paddingTop: "8px",
+                  paddingBottom: "8px"
+                }}
+              >
+                {" "}
+                {book.ratestar}{" "}
+              </div>
+              <div
+                key={book.rating}
                 style={{
                   fontSize: "smaller",
                   paddingTop: "8px",
@@ -102,3 +145,4 @@ export default function App() {
     </div>
   );
 }
+
